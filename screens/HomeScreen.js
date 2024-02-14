@@ -9,6 +9,13 @@ export default function HomeScreen({ navigation }) {
     useEffect(() => {
 
         getBlogPosts();
+
+        const listener = navigation.addListener('focus', () => {
+            getBlogPosts();
+        });
+        return () => {
+            listener.removeListener();
+        }
     }, [])
 
     return (

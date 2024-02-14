@@ -8,7 +8,7 @@ export default function EditScreen({ route, navigation }) {
     const { id } = route.params;
     const blogPost = state.find((blogPost) => blogPost.id === id);
     return (<BlogPostForm onSubmit={(title, content) => {
-        editBlogPost(title, content, id, () => navigation.pop() /*bir önceki sayfaya aktarır*/);
+        editBlogPost(title, content, id, () => navigation.pop() /* navigation.pop() bir önceki sayfaya aktarır */);
     }} isButtonAction={'Güncelle'} initialValues={{ title: blogPost.title, content: blogPost.content }} />)
 }
 
